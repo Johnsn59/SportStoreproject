@@ -1,0 +1,15 @@
+﻿@model Product
+
+@*<h3> @Model.Name </h3>
+    <p> @Model.Description </p>
+    <h4> @Model.Price.ToString("c") </h4>
+    <h4> Category: @Model.Category </h4>
+*@
+
+@*@Html.Partial("ProductSummary", Model)*@
+
+<partial name="ProductSummary" />
+
+<a asp-controller="Product" asp-action="Update" asp-route-id="@Model.ProductId" class="badge badge-secondary">Edit</a>
+<a asp-action="Index" class="badge badge-primary">Home</a>
+<a asp-action="Delete" asp-route-id="@Model.ProductId" class="badge badge-danger">Delete &#x1F5D1 </a>

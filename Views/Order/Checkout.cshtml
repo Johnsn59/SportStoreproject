@@ -1,0 +1,55 @@
+﻿@model Order
+
+<h2> Checkout Now </h2>
+
+<p>
+    Please enter your address.
+    We'll ship your goods right away!
+</p>
+
+<div asp-validation-summary="All" class="text-danger"></div>
+
+<form asp-action="Checkout" method="post">
+    <h3> Ship To: </h3>
+    <div class="form-group">
+        <label> Name: </label>
+        <input asp-for="Name" class="form-control" placeholder="Your Name" title="Enter Your Name" />
+    </div>
+    <div class="form-group">
+        <label> Address 1: </label>
+        <input asp-for="Line1" class="form-control" placeholder="Address Line 1" />
+    </div>
+    <div class="form-group">
+        <label> Address 2: </label>
+        <input asp-for="Line2" class="form-control" placeholder="Address Line 2" />
+    </div>
+    <div class="form-group">
+        <label> Address 3: </label>
+        <input asp-for="Line3" class="form-control" placeholder="Address Line 3" />
+    </div>
+    <div class="form-group">
+        <label> City: </label>
+        <input asp-for="City" class="form-control" placeholder="City" />
+    </div>
+    <div class="form-group">
+        <label> State: </label>
+        <input asp-for="State" class="form-control" placeholder="State" />
+    </div>
+    <div class="form-group">
+        <label> Zip Code: </label>
+        <input type="number" asp-for="Zip" class="form-control" placeholder="Zip Code" />
+    </div>
+    <div class="form-group">
+        <label> Country: </label>
+        <input asp-for="Country" class="form-control" placeholder="Country" />
+    </div>
+    <div class="form-group">
+        <input asp-for="GiftWrap" />
+        <label> Gift Wrap </label>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">
+            Place Order
+        </button>
+    </div>
+</form>

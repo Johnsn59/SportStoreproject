@@ -1,0 +1,30 @@
+﻿@model Product
+
+    <form asp-action="Create" method="post">
+        <table>
+            <tr>
+                <th> Name: </th>
+                <td> <input asp-for="Name" /> </td>
+            </tr>
+            <tr>
+                <th> Description: </th>
+                <td> <input asp-for="Description" /> </td>
+            </tr>
+            <tr>
+                <th> Price: </th>
+                <td> <input asp-for="Price" /> </td>
+            </tr>
+            <tr>
+                <th> Category: </th>
+                <td> <input asp-for="Category" /> </td>
+            </tr>
+            <tr>
+                <th></th>
+                <td> <input type="submit" value="Add Product" /> </td>
+            </tr>
+        </table>
+        <button asp-action="Index" class="badge-primary" formmethod="get">
+            Cancel
+        </button>
+
+    </form>

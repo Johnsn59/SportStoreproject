@@ -1,0 +1,15 @@
+﻿@model Product
+
+@*@Html.Partial("ProductSummary", Model)*@
+
+<partial name="ProductSummary" />
+
+<h1> Are You Sure? </h1>
+<form method="post">
+    <button asp-action="Delete" class="badge-danger">
+        Delete &#x1F5D1
+    </button>
+    <button asp-action="Index" class="badge-primary" formmethod="get">
+        Cancel
+    </button>
+</form>

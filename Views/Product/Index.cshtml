@@ -1,0 +1,25 @@
+﻿@model ProductListViewModel
+
+<a asp-controller="Product" asp-action="Create" class="col-3"> Create New Product </a>
+@*<a asp-controller="Product" asp-action="Search" style="float:right"> Search Product </a>*@
+
+@foreach (Product p in Model.Products)
+{
+    @Html.Partial("ProductSummary", p)
+}
+
+@*@for (int pageNumber = 1; pageNumber <= Model.PagingInfo.TotalPages; pageNumber++)
+    {
+        @:<a href="?productPage=@pageNumber"> Page @pageNumber </a> &nbsp; &nbsp; &nbsp; &nbsp;
+    }*@
+
+<div page-model="@Model.PagingInfo"
+     page-action="Index"
+     page-classes-enabled="true"
+     page-class="btn"
+     page-class-normal="btn-secondary"
+     page-class-selected="btn-primary"
+     page-url-category="@Model.CurrentCategory"
+     class="btn-group pull-right m-1">
+</div>
+
